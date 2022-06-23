@@ -1,0 +1,19 @@
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    line-height: 1.2;
+}
+/* CHANGE HAPPENS IN greeting.js FILE!!! */
+h1{
+    font-size: medium;
+    color: var(--red);
+}
+
+h2{
+    font-size: clamp(40px, 8vw, 80px);
+    color: var(--red);
+}
+
+h3{
+    font-size: clamp(40px, 6vw, 60px);
+    color: var(--green);
+}
