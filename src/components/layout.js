@@ -1,12 +1,23 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import * as Styles from '../styles/style.module.css';
 import Navbar from './navbar';
 
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
+    const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+    `);
+    
     return (
         <div>
-            <title>Grant Wecker</title>
+            <title>{data.site.siteMetadata.title}</title>
             <Navbar/>
             <main>
                 {children}
