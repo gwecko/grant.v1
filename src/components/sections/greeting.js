@@ -25,7 +25,7 @@ h3{
 }
 `;
 
-const Greeting = () => {
+const GreetingSection = () => {
     return (
         <StyledGreeting>
             <h1>Welcome! I'm</h1>
@@ -35,4 +35,4 @@ const Greeting = () => {
     )
 };
 
-export default Greeting;
+export default GreetingSection;

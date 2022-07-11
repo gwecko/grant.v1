@@ -12,8 +12,8 @@ nav{
     width: 100%;
     height: 70px;
     background: (rgba(23,43,10, .9));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     font-size: .9em;
 }
 
@@ -71,7 +71,6 @@ const Navbar = () => {
         <StyledNavbar>
             <nav>
                 <span role="img">🗿</span>
-                <div class="nav-blur"></div>
                 <ul>{navbarLinks &&
                     navbarLinks.map((link, i) => (
                         <li key={i}><Link to={link.url} class="underline-anim">

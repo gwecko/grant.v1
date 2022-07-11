@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `grant.v1`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Grant Wecker 👾`,
+    // siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://grantwecker.com`
   },
   plugins: [
     "gatsby-plugin-image",
