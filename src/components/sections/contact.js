@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { email } from '../../config.js';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const StyledContact = styled.section`
-    div{
-        
+    .container{
+        display: flex;
+        padding: 0 auto;
     }
 
     button{
-        margin: 0px 0px 0px 0px;
+        margin: 0px 20px 0px 0px;
         padding: 0px 0px 0px 0px;
         background: rgba(0,0,0,0);
         border: none;
@@ -17,8 +20,9 @@ const StyledContact = styled.section`
 
     .email-link{
         display: block;
+        width: max-content;
         font-size: 1.6em;
-        padding: 20px 30px 20px 30px;
+        padding: 20px 25px 20px 25px;
         border: solid 3px rgba(218, 70, 92, .8);
         border-radius: 12px;
         color: var(--white);
@@ -29,18 +33,22 @@ const StyledContact = styled.section`
             transition: 0.15s ease-in-out;
         }
     }
-`
+
+    .resume-link{
+        display: inline-block;
+    }
+`;
 
 
 const ContactSection = () => {
     return (
         <StyledContact id='contact'>
-            <div>
-                <h2>Contact</h2>
+            <h2>Contact</h2>
+            <div className='container'>
+                <p>If you care to share any opportunities or ideas, then I care to hear them! Or just say hi, I'd be happy to hear from you.</p>
                 <button>
                     <a className="email-link" href={`mailto:${email}`}>
-                        {`Say hello (:`}
-                    </a>
+                        Say hello <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon></a>
                 </button>
             </div>
         </StyledContact>

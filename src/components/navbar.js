@@ -15,12 +15,14 @@ nav{
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     font-size: .9em;
+    z-index: 5;
 }
 
 ul{
     list-style: none;
     margin-left: auto;
     padding-top: 10px;
+    margin-bottom: 50px;
 }
 
 li{
@@ -57,6 +59,20 @@ a{
     transform-origin: bottom left;
 }
 
+.resume-link{
+    padding: 10px;
+    display: inline;
+    border: solid 2px rgba(218, 70, 92, .8);
+    border-radius: 5px;
+    color: var(--white);
+    background: rgba(218, 70, 92, .3);
+    &:hover{
+        background: rgba(218, 70, 92, .6);
+        color: var(--white);
+        transition: 0.15s ease-in-out;
+    } 
+}
+
 span{
     font-size: 40px;
     transform: scaleX(-1);
@@ -71,13 +87,14 @@ const Navbar = () => {
         <StyledNavbar>
             <nav>
                 <span role="img">🗿</span>
-                <ul>{navbarLinks &&
-                    navbarLinks.map((link, i) => (
-                        <li key={i}><Link to={link.url} class="underline-anim">
-                        {link.name}
-                    </Link></li>
+                <ul>
+                    {navbarLinks && navbarLinks.map((link, i) => (
+                    <li key={i}><Link to={link.url} className='underline-anim'>
+                        {link.name}</Link></li>
                     ))
-                }</ul>
+                    }
+                    <li><a href="/placeholder.pdf" className="resume-link">Résumé</a></li>
+                </ul>
             </nav>
         </StyledNavbar>
     )

@@ -1,18 +1,24 @@
 import React from 'react';
+import { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import IconGitHub from '../icons/github';
 
 
-const StyledProjectsList = styled.div`
-  .projects-list{
-    padding-inline-start: 0;
-    width: 100px;
+const StyledProjects = styled.section`
+  
+  .container{
+    display: flex;
   }
+
+`;
+
+const StyledProjectList = styled.div`
+    
+  width: max-content;
 
   ul{
     list-style: none;
@@ -22,50 +28,76 @@ const StyledProjectsList = styled.div`
   li{
     padding: 0;
     margin: 0px 30px 20px 0px;
-    display: block
+    display: block;
   }
 
   button{ 
     background: none;
     border: none;
     color: var(--red);
-    text: var(--red);
     font-size: 15px;
     display: block;
-    padding: 0px 10px 0px 0px;
-    margin: 0px;
+    //padding: 0px 10px 0px 10px;
+    cursor: pointer;
+    transition: .2s;
+    &:hover{
+      color: var(--white);
+      transition: .1s;
+    }
+  }
+
+  .highlight{
+    transition: .2s;
+    padding: 0 auto;
+    border-left: 3px solid var(--red);
+    color: var(--white);
   }
 `;
 
-const StyledProjects = styled.div`
+const StyledProjectCard = styled.div`
   .card{
     background: rgba(142, 153, 166, .07);
     /* top-right-bottom-left */
-    padding: 25px 15px 15px 25px;
+    padding: 25px 40px 40px 35px;
     border-radius: 5px;
     margin-top: 0;
     margin-bottom: 60px;
     border-left: 5px solid var(--red);
   }
 
-  .top{
+  // project name & links
+  .card-top{
     display: flex;
+  }
+
+  h3{
     margin-right: 20px;
   }
 
   ul{
     list-style: none;
     padding: 0;
+    margin-left: auto;
   }
 
   li{
     display: inline-block;
-    margin-left: 0;
-    margin-right: 20px;
+    margin: 0 10px;
   }
 
   a{
+    display: block;
     font-size: 25px;
+    transition: .2s;
+    &:hover{
+      color: var(--white);
+      transition: .1s;
+    }
+  }
+
+  // project tech & description
+  .card-body{
+    
   }
 `;
 
@@ -89,6 +121,8 @@ const ProjectsSection = () => {
     }`
   );
   
+  const [activeTabId, setActiveTabId] = useState(0);
+  
   // gather project names for side list
   const projectsListArray = [];
   data.allMdx.nodes.map((node) => {
@@ -97,12 +131,18 @@ const ProjectsSection = () => {
   
   
   const projectsList = (
-    <div className='projects-list'>
+    <div>
       <ul>
         {
-          projectsListArray.map((name) => (
+          projectsListArray.map((name, i) => (
             <li>
-              <button>{name}</button>
+              <button
+                key={i}
+                // isActive={i === activeTabId}
+                onClick={() => setActiveTabId(i)}
+                className={(i === activeTabId) ? 'highlight' : ''}>
+                {name}
+              </button>
             </li>
           ))
         }     
@@ -112,30 +152,44 @@ const ProjectsSection = () => {
   
   
   // put each project into its own card
-  const projects = data.allMdx.nodes.map((node) => (
-    <div className='card'>
-      <div className='top'>
+  const projects = data.allMdx.nodes.map((node, i) => (
+    <div className='card' 
+      key={i}
+      hidden={activeTabId !== i}>
+      <div className='card-top'>
       <h3 id="title">{node.frontmatter.name}</h3>
-        <ul className='links'>
+        <ul>
           <li>
-            <a href={node.frontmatter.repo}><FontAwesomeIcon icon={faGithub} /></a></li>
+            <a href={node.frontmatter.repo}
+               target="_blank" rel="noreferrer noopener">
+              <FontAwesomeIcon icon={faGithub} /></a></li>
           <li>
-            <a href={node.frontmatter.url}><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a></li>
+            <a href={node.frontmatter.url}
+               target="_blank" rel="noreferrer noopener">
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a></li>
         </ul>
       </div>
-      <div role="image" id="image"></div>
-      <p>Tech used: {node.frontmatter.technologies}</p>
-      <MDXRenderer id="body">{node.body}</MDXRenderer>
+      <div className='card-body'>
+        <p>Tech used: {node.frontmatter.technologies}</p>
+        <MDXRenderer>{node.body}</MDXRenderer>
+      </div>
+      <div>Image here</div>
     </div>
-  ));
+));
   
   
   return (
-    <div id='projects'>
+    <StyledProjects id='projects'>
       <h2>Projects</h2>
-      <StyledProjectsList>{projectsList}</StyledProjectsList>
-      <StyledProjects>{projects}</StyledProjects>
-    </div>
+      <div className='container'>
+        <div className='list'>
+          <StyledProjectList>{projectsList}</StyledProjectList>
+        </div>
+        <div className='cards'>
+          <StyledProjectCard>{projects}</StyledProjectCard>
+        </div>
+      </div>
+    </StyledProjects>
   )
 };
 
