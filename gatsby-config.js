@@ -29,7 +29,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'projects', 
-        path: "./src/projects/"
+        path: `${__dirname}/projects/`
       }
     },
     "gatsby-plugin-gatsby-cloud"
