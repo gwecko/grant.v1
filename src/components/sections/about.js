@@ -2,11 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledAbout = styled.section`
-
-    div{
-        border: none;
-    }
-
     h2{
         margin-top: 80px;
     }
@@ -18,8 +13,16 @@ const StyledAbout = styled.section`
         }
     }
 
+    .answer{
+        
+    }
+
     p{
         padding: 0px 0px 0px 25px;
+    }
+
+    @media screen and (max-width: 800px) {
+            padding: 10px;
     }
 `
 
@@ -29,29 +32,41 @@ const AboutSection = () => {
         <StyledAbout id='about'>
             <h2>About me</h2>
             <h3>Who are you?</h3>
-            <p>
+            <div className='answer'>
+                <p>
                 Self-taught web developer.
-            </p>
+                </p>
+            </div>
             <h3>What got you here?</h3>
-            <p>
+            <div className='answer'>
+                <p>
                 An obsession in website design and digital experiences.
-            </p>
+                </p>
+            </div>
             <h3>What technologies do you work with?</h3>
-            <p>
+            <div className='answer'>
+                <p>
                 Javascript, React, node.js, Mongo
-            </p>
+                </p>
+            </div>
             <h3>Anything else?</h3>
-            <p>
-                I'm familiar with Express, C, Bootstrap, Gatsby, and API integration.
-            </p>
+            <div className='answer'>
+                <p>
+                I have demonstrated use with Express, C, Bootstrap, Gatsby, and API integration.
+                </p>
+            </div>
             <h3>What are your goals?</h3>
-            <p>
+            <div className='answer'>
+                <p>
                 Develop alongside a group of individuals with experience greater than my own.
-            </p>
+                </p>
+            </div>
             <h3>Who are you, really?</h3>
-            <p>
+            <div className='answer'>
+                <p>
                 Ohio native with an enthusiasm for tall women.
-            </p>
+                </p>
+            </div>
         </StyledAbout>
     )
 };

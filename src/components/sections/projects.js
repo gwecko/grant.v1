@@ -12,6 +12,10 @@ const StyledProjects = styled.section`
   
   .container{
     display: flex;
+
+    @media screen and (max-width: 480px){
+      display: block;
+    }
   }
 
 `;
@@ -182,12 +186,8 @@ const ProjectsSection = () => {
     <StyledProjects id='projects'>
       <h2>Projects</h2>
       <div className='container'>
-        <div className='list'>
           <StyledProjectList>{projectsList}</StyledProjectList>
-        </div>
-        <div className='cards'>
           <StyledProjectCard>{projects}</StyledProjectCard>
-        </div>
       </div>
     </StyledProjects>
   )

@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { navbarLinks } from "../config";
 
-// .clientWidth returns the width without the scroll bar
-
 const StyledNavbar = styled.nav`
 nav{
     display: flex;
@@ -18,6 +16,7 @@ nav{
     z-index: 5;
 }
 
+
 ul{
     list-style: none;
     margin-left: auto;
@@ -26,7 +25,6 @@ ul{
 }
 
 li{
-    float: left;
     display: inline-block;
     margin: 0px 35px 0px 0px;
 }
@@ -59,9 +57,15 @@ a{
     transform-origin: bottom left;
 }
 
+.hide-mobile{
+    @media screen and (max-width: 480px){
+        display: none;
+    }
+}
+
 .resume-link{
-    padding: 10px;
     display: inline;
+    padding: 8px;
     border: solid 2px rgba(218, 70, 92, .8);
     border-radius: 5px;
     color: var(--white);
@@ -71,6 +75,9 @@ a{
         color: var(--white);
         transition: 0.15s ease-in-out;
     } 
+    @media screen and (max-width: 480px){
+        text-align: right
+    }
 }
 
 span{
@@ -86,11 +93,14 @@ const Navbar = () => {
     return (
         <StyledNavbar>
             <nav>
-                <span role="img">🗿</span>
+                <span role="img">👾</span>
                 <ul>
                     {navbarLinks && navbarLinks.map((link, i) => (
-                    <li key={i}><Link to={link.url} className='underline-anim'>
-                        {link.name}</Link></li>
+                        <li
+                            key={i}>
+                            <Link to={link.url} className='underline-anim hide-mobile'>
+                                {link.name}</Link>
+                        </li>
                     ))
                     }
                     <li><a href="/placeholder.pdf" className="resume-link">Résumé</a></li>
