@@ -13,7 +13,7 @@ const StyledProjects = styled.section`
   .container{
     display: flex;
 
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 600px){
       display: block;
     }
   }

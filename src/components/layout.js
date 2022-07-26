@@ -26,21 +26,25 @@ const GlobalStyle = createGlobalStyle`
   h2{
     font-size: 2.5em;
     width: max-content;
-    display: flex;
+    // display: flex;
   }
 
   h2::after{
-      content: '';
-      display: inline-block;
-      position: relative;
-      top: -8px;
-      width: 300px;
-      height: 2px;
-      margin-left: 20px;
-      background-color: var(--green);
-      @media (max-width: 480px){
-        display: none;
-      }
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: -8px;
+    width: 300px;
+    height: 2px;
+    margin-left: 20px;
+    background-color: var(--green);
+    @media (max-width: 600px){
+      display: none;
+    }
+  }
+
+  h2:not(:first-child)::after{
+    content: none;
   }
 `;
 
