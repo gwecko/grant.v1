@@ -67,6 +67,10 @@ const StyledProjectCard = styled.div`
     margin-top: 0;
     margin-bottom: 60px;
     border-left: 5px solid var(--red);
+    @media (max-width: 480px) { 
+      border: none;
+      background: linear-gradient(to right, rgba(142, 153, 166, 0), rgba(23, 43, 10, .3))
+    }
   }
 
   // project name & links
@@ -76,12 +80,18 @@ const StyledProjectCard = styled.div`
 
   h3{
     margin-right: 20px;
+    @media (max-width: 480px) {
+      margin-right: auto;
+    }
   }
 
   ul{
     list-style: none;
     padding: 0;
     margin-left: auto;
+    @media (max-width: 480px) {
+      display: flex;
+    }
   }
 
   li{

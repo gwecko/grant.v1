@@ -8,9 +8,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const StyledContact = styled.section`
     .container{
         display: flex;
-        padding: 0 auto;
         @media screen and (max-width: 480px){
             display: block;
+            text-align: center;
+            > button{
+                margin: 20px 0px
+            }
         }
     }
 
@@ -34,10 +37,6 @@ const StyledContact = styled.section`
             background: rgba(218, 70, 92, .6);
             color: var(--white);
             transition: 0.15s ease-in-out;
-        }
-        @media screen and (max-width: 480px){
-            margin-top: 30px;
-            margin-left: 30px;
         }
     }
 

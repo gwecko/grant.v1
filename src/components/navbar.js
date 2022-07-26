@@ -27,6 +27,9 @@ ul{
 li{
     display: inline-block;
     margin: 0px 35px 0px 0px;
+    @media (max-width: 480px){
+        margin: 0px 10px 0px 0px;
+    }
 }
 
 a{
@@ -75,17 +78,12 @@ a{
         color: var(--white);
         transition: 0.15s ease-in-out;
     } 
-    @media screen and (max-width: 480px){
-        text-align: right
-    }
 }
 
 span{
-    font-size: 40px;
-    transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    margin-left: 10px;
-    filter: sepia(1) saturate(4)  hue-rotate(319deg);
+    font-size: 3rem;
+    margin-left: calc(1% + 10px);
+    filter: sepia(1%)  hue-rotate(85deg) saturate(130%);
 }
 `;
 
