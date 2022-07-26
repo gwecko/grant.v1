@@ -85,6 +85,7 @@ span{
     transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     margin-left: 10px;
+    filter: sepia(1) saturate(4)  hue-rotate(319deg);
 }
 `;
 
