@@ -192,11 +192,13 @@ const ProjectsSection = () => {
           <ul>
             <li>
               <a href={node.frontmatter.repo}
-                target="_blank" rel="noreferrer noopener">
+                target="_blank" rel="noreferrer noopener"
+                aria-label={`${node.frontmatter.name} github`}>
                 <FontAwesomeIcon icon={faGithub} /></a></li>
             <li>
               <a href={node.frontmatter.url}
-                target="_blank" rel="noreferrer noopener">
+                target="_blank" rel="noreferrer noopener"
+                aria-label={`${node.frontmatter.name} external`}>
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a></li>
           </ul>
         </div>
