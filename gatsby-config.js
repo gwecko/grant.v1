@@ -18,6 +18,12 @@ module.exports = {
     //   __key: "images"
     // },
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: "true",
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: "pages",
