@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
 
 const StyledProjects = styled.section`
@@ -13,8 +14,11 @@ const StyledProjects = styled.section`
   .container{
     display: flex;
 
-    @media screen and (max-width: 600px){
+    @media (max-width: 768px){
       display: block;
+    }
+    @media (max-width: 480px){
+      width: 90vw;
     }
   }
 
@@ -109,10 +113,16 @@ const StyledProjectCard = styled.div`
     }
   }
 
-  // project tech & description
-  .card-body{
-    
+  .img{
+    filter: drop-shadow(5px 5px 10px var(--darkGreen));
+    transition: .2s;
+
+    &:hover{
+      transform: translate(-1px, -2px);
+      transition: .1s ease-in;
+    }
   }
+
 `;
 
 
@@ -128,8 +138,12 @@ const ProjectsSection = () => {
             repo
             technologies
             url
+            image {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
-          id
         }
       }
     }`
@@ -140,10 +154,10 @@ const ProjectsSection = () => {
   // gather project names for side list
   const projectsListArray = [];
   data.allMdx.nodes.map((node) => {
-    projectsListArray.push(node.frontmatter.name);
+    return(projectsListArray.push(node.frontmatter.name))
   });
   
-  
+  // project selection side list
   const projectsList = (
     <div>
       <ul>
@@ -165,31 +179,41 @@ const ProjectsSection = () => {
   );
   
   
-  // put each project into its own card
-  const projects = data.allMdx.nodes.map((node, i) => (
-    <div className='card' 
-      key={i}
-      hidden={activeTabId !== i}>
-      <div className='card-top'>
-      <h3 id="title">{node.frontmatter.name}</h3>
-        <ul>
-          <li>
-            <a href={node.frontmatter.repo}
-               target="_blank" rel="noreferrer noopener">
-              <FontAwesomeIcon icon={faGithub} /></a></li>
-          <li>
-            <a href={node.frontmatter.url}
-               target="_blank" rel="noreferrer noopener">
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a></li>
-        </ul>
+  // make a card for each project
+  const projects = data.allMdx.nodes.map((node, i) => {
+    const image = getImage(node.frontmatter.image);
+    
+    return (
+      <div className='card'
+        key={i}
+        hidden={activeTabId !== i}>
+        <div className='card-top'>
+          <h3 id="title">{node.frontmatter.name}</h3>
+          <ul>
+            <li>
+              <a href={node.frontmatter.repo}
+                target="_blank" rel="noreferrer noopener">
+                <FontAwesomeIcon icon={faGithub} /></a></li>
+            <li>
+              <a href={node.frontmatter.url}
+                target="_blank" rel="noreferrer noopener">
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a></li>
+          </ul>
+        </div>
+        <div className='card-body'>
+          <h4><i>{node.frontmatter.technologies}</i></h4>
+          <MDXRenderer>{node.body}</MDXRenderer>
+        </div>
+        <div className='img'>
+          <br />
+          <a href={node.frontmatter.url}
+            target="_blank" rel="noreferrer noopener">
+            <GatsbyImage image={image} />
+          </a>
+        </div>
       </div>
-      <div className='card-body'>
-        <p>Tech used: {node.frontmatter.technologies}</p>
-        <MDXRenderer>{node.body}</MDXRenderer>
-      </div>
-      <div>Image here</div>
-    </div>
-));
+    )
+  });
   
   
   return (
