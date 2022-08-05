@@ -3,15 +3,11 @@ module.exports = {
     
     socialMedia: [
         {
-            name: 'Github',
+            name: 'github',
             url: 'https://github.com/gwecko'
         },
         {
-            name: 'Instagram',
-            url: 'https://www.instagram.com/g_weck/'
-        },
-        {
-            named: 'LinkedIn',
+            name: 'linkedIn',
             url: 'https://www.linkedin.com/in/grant-wecker'
         }
     ],
@@ -19,7 +15,6 @@ module.exports = {
     colors: {
         darkGreen: '#172B0A',  // (23, 43, 10)
         green: '#485632',  // (72, 86, 50)
-        gray: '#8E99A6',  // (142, 153, 166)
         white: '#F0EBE0',  // (240, 235, 224)
         red: '#DA465C'  // (218, 70, 92)
     },

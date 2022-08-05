@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { email } from '../../config.js';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { Icon } from '../icons';
 
 const StyledContact = styled.section`
     .container{
@@ -53,7 +51,7 @@ const ContactSection = () => {
                 <p>If you care to share any opportunities or ideas, then I care to hear them! Or just say hi, I'd be happy to hear from you.</p>
                 <button>
                     <a className="email-link" href={`mailto:${email}`}>
-                        Say hello <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon></a>
+                        Say hello <Icon name='plane' /></a>
                 </button>
             </div>
         </StyledContact>

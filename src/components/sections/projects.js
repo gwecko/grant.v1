@@ -3,10 +3,8 @@ import { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { Icon } from '../icons';
 
 
 const StyledProjects = styled.section`
@@ -42,7 +40,6 @@ const StyledProjectList = styled.div`
     padding-left: 10px;
     margin: 0px 30px 20px 10px;
     display: block;
-    cursor: pointer;
     transition: .2s;
     &:hover{
       color: var(--red);
@@ -55,6 +52,7 @@ const StyledProjectList = styled.div`
     color: var(--white);
     font-size: initial;
     font-family: inherit;
+    cursor: pointer;
   }
 
   .highlight{
@@ -86,13 +84,14 @@ const StyledProjectCard = styled.div`
   }
 
   h3{
-    margin-right: 20px;
+    margin-right: 0px;
     @media (max-width: 480px) {
       margin-right: auto;
     }
   }
 
   ul{
+    display: inline-flex;
     list-style: none;
     padding: 0;
     margin-left: auto;
@@ -102,17 +101,27 @@ const StyledProjectCard = styled.div`
   }
 
   li{
-    display: inline-block;
     margin: 0 10px;
+    @media (max-width: 600px){
+      margin: 0 auto;
+    }
   }
 
   a{
     display: block;
-    font-size: 25px;
     transition: .2s;
+    svg{
+      width: 1.7rem;
+      stroke-width: 2;
+    }
     &:hover{
       color: var(--white);
       transition: .1s;
+    }
+    &:active{
+      svg{
+        fill: var(--white);
+      }
     }
   }
 
@@ -155,17 +164,17 @@ const ProjectsSection = () => {
   const [activeTabId, setActiveTabId] = useState(0);
   
   // gather project names for side list
-  const projectsListArray = [];
+  const projectListArray = [];
   data.allMdx.nodes.map((node) => {
-    return(projectsListArray.push(node.frontmatter.name))
+    return(projectListArray.push(node.frontmatter.name))
   });
   
   // project selection side list
-  const projectsList = (
+  const projectList = (
     <div>
       <ul>
         {
-          projectsListArray.map((name, i) => (
+          projectListArray.map((name, i) => (
             <li className={(i === activeTabId) ? 'highlight' : ''}>
               <button
                 key={i}
@@ -182,7 +191,7 @@ const ProjectsSection = () => {
   
   
   // make a card for each project
-  const projects = data.allMdx.nodes.map((node, i) => {
+  const projectCard = data.allMdx.nodes.map((node, i) => {
     const image = getImage(node.frontmatter.image);
     
     return (
@@ -196,12 +205,12 @@ const ProjectsSection = () => {
               <a href={node.frontmatter.repo}
                 target="_blank" rel="noreferrer noopener"
                 aria-label={`${node.frontmatter.name} github`}>
-                <FontAwesomeIcon icon={faGithub} /></a></li>
+                <Icon name='github' /></a></li>
             <li>
               <a href={node.frontmatter.url}
                 target="_blank" rel="noreferrer noopener"
                 aria-label={`${node.frontmatter.name} external`}>
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a></li>
+                <Icon name='external' /></a></li>
           </ul>
         </div>
         <div className='card-body'>
@@ -224,8 +233,8 @@ const ProjectsSection = () => {
     <StyledProjects id='projects'>
       <h2>Projects</h2>
       <div className='container'>
-          <StyledProjectList>{projectsList}</StyledProjectList>
-          <StyledProjectCard>{projects}</StyledProjectCard>
+          <StyledProjectList>{projectList}</StyledProjectList>
+          <StyledProjectCard>{projectCard}</StyledProjectCard>
       </div>
     </StyledProjects>
   )

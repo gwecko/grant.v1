@@ -2,6 +2,7 @@ import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Head from './head';
 import Navbar from './navbar';
+import Footer from './footer';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -40,6 +41,11 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       display: flex;
       overflow-x: hidden;
+      @supports(padding:max(0px)) { env() }
+      padding: env(safe-area-inset-top) 
+                env(safe-area-inset-right) 
+                env(safe-area-inset-bottom) 
+                env(safe-area-inset-left);
   }
 
   body{
@@ -131,6 +137,7 @@ const Layout = ({ children }) => {
       <main>
           {children}
       </main>
+      <Footer />
     </>
   )
 }
