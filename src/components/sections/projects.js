@@ -10,6 +10,10 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
 
 const StyledProjects = styled.section`
+
+  h2{
+    padding-bottom: 30px;
+  }
   
   .container{
     display: flex;
@@ -34,24 +38,23 @@ const StyledProjectList = styled.div`
   }
 
   li{
-    padding: 0;
-    margin: 0px 30px 20px 0px;
+    width: max-content;
+    padding-left: 10px;
+    margin: 0px 30px 20px 10px;
     display: block;
-  }
-
-  button{ 
-    background: none;
-    border: none;
-    color: var(--red);
-    font-size: 15px;
-    display: block;
-    //padding: 0px 10px 0px 10px;
     cursor: pointer;
     transition: .2s;
     &:hover{
-      color: var(--white);
+      color: var(--red);
       transition: .1s;
     }
+  }
+
+  button{
+    background: none;
+    color: var(--white);
+    font-size: initial;
+    font-family: inherit;
   }
 
   .highlight{
@@ -163,12 +166,11 @@ const ProjectsSection = () => {
       <ul>
         {
           projectsListArray.map((name, i) => (
-            <li>
+            <li className={(i === activeTabId) ? 'highlight' : ''}>
               <button
                 key={i}
-                // isActive={i === activeTabId}
                 onClick={() => setActiveTabId(i)}
-                className={(i === activeTabId) ? 'highlight' : ''}>
+                onKeyDown={() => setActiveTabId(i)}>
                 {name}
               </button>
             </li>

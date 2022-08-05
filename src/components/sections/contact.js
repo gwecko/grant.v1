@@ -35,8 +35,7 @@ const StyledContact = styled.section`
         background: rgba(218, 70, 92, .3);
         &:hover{
             background: rgba(218, 70, 92, .6);
-            color: var(--white);
-            transition: 0.15s ease-in-out;
+            transition: 0.15s ease-out;
         }
     }
 

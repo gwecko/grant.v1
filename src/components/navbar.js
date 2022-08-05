@@ -20,7 +20,7 @@ nav{
 ul{
     list-style: none;
     margin-left: auto;
-    padding-top: 10px;
+    padding-top: 25px;
     margin-bottom: 50px;
 }
 
@@ -94,7 +94,7 @@ const Navbar = () => {
             <nav>
                 <span role="img">👾</span>
                 <ul>
-                    {navbarLinks && navbarLinks.map((link, i) => (
+                    {navbarLinks.map((link, i) => (
                         <li
                             key={i}>
                             <Link to={link.url} className='underline-anim hide-mobile'>
@@ -102,7 +102,8 @@ const Navbar = () => {
                         </li>
                     ))
                     }
-                    <li><a href="/placeholder.pdf" className="resume-link">Résumé</a></li>
+                    <li><a href="/placeholder.pdf" className="resume-link">Résumé</a>
+                    </li>
                 </ul>
             </nav>
         </StyledNavbar>

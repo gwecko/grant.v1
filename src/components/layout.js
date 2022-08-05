@@ -27,6 +27,12 @@ const GlobalStyle = createGlobalStyle`
   }
   /* END: Scrollbar stuff */
 
+  *{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: O;
+  }
 
   html{
       width: 100%;

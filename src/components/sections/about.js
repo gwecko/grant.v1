@@ -2,36 +2,47 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 
+
 const StyledAbout = styled.section`
     h2{
         margin-top: 80px;
     }
     
     h3{
-        padding-top: 20px;
-        display: inline-block;
-        &:before{
-            content: '> ';
-            color: var(--red);
+        padding: 10px 0;
+        margin-top: 10px;
+        display: inline-flex;
+        &:hover{
+            cursor: pointer;
+        }
+    }
 
-        }
-        @media (max-width: 600px){
-            
-        }
+    button{
+        background: none;
+        color: var(--white);
+        font-size: initial;
+        font-family: inherit;
+        text-align: inherit;
+    }
+
+    span{
+        display: inline-flex;
+        color: var(--red);
+        height: min-content;
+        margin-right: 10px;
+        transition: .2s ease-out;
+    }
+
+    .rotate{
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transition: .2s;
     }
 
     p{
         padding: 0;
         margin: 0;
-        display: inline-block;
-    }
-
-    details{
-        transition: .3s;
-    }
-
-    button{
-        display: inline-block;
+        display: block;
     }
 
     .show-answer{
@@ -64,14 +75,17 @@ const StyledAbout = styled.section`
 
 const AboutSection = () => {
     
-    // array of question & answer objects
+    /* 
+        array of question & answer objects
+        the 'hidden' property is necessary for the collapse feature
+    */
     const questionsAndAnswers = [
         {
             question: "Who are you?",
             answer: "Self-taught web developer with academic CS background.",
-            answer_ext: `I graduated from The Ohio State University with a degree in Communication Technology and a minor
-                        in Computer Science. I've since taught myself
-                        the ins and outs of web development, mostly
+            answer_ext: `I graduated from The Ohio State University with a degree in 
+                        Communication Technology and a minor in Computer Science. I've
+                        since taught myself the ins and outs of web development, mostly 
                         through Udemy and "browsing the docs".`,
             hidden: true
         },
@@ -84,32 +98,47 @@ const AboutSection = () => {
         {
             question: "What technologies do you work with?",
             answer: "Javascript, React, node.js, Mongo",
-            answer_ext: ``,
+            answer_ext: `Liquor ipsum dolor sit amet skyy glendullan, rose kennedy
+                        cocktail, polmos krakow hiram walker, old mr. boston sex on
+                        bloody mary choking hazard paralyzer; negroni vodka sunrise. Johnny
+                        walker black farnell bunnahabhain my fair lady glenlivet lord calvert;
+                        jack and coke.`,
             hidden: true
         },
         {
             question: "Anything else?",
             answer: "I have demonstrated use with Express, C, Bootstrap, Gatsby, and API integration.",
-            answer_ext: ``,
+            answer_ext: `Liquor ipsum dolor sit amet skyy glendullan, rose kennedy
+                        cocktail, polmos krakow hiram walker, old mr.boston sex on
+                        bloody mary choking hazard paralyzer; negroni vodka sunrise.Johnny
+                        walker black farnell bunnahabhain my fair lady glenlivet lord calvert;
+                        jack and coke.`,
             hidden: true
         },
         {
             question: "What are your goals?",
             answer: "Develop alongside a group of individuals with experience greater than my own.",
-            answer_ext: ``,
+            answer_ext: `Liquor ipsum dolor sit amet skyy glendullan, rose kennedy
+                        cocktail, polmos krakow hiram walker, old mr.boston sex on
+                        bloody mary choking hazard paralyzer; negroni vodka sunrise.Johnny
+                        walker black farnell bunnahabhain my fair lady glenlivet lord calvert;
+                        jack and coke.`,
             hidden: true
         },
         {
             question: "Who are you, really?",
             answer: "Ohio native with an enthusiasm for tall women.",
-            answer_ext: ``,
+            answer_ext: `Liquor ipsum dolor sit amet skyy glendullan, rose kennedy
+                        cocktail, polmos krakow hiram walker, old mr.boston sex on
+                        bloody mary choking hazard paralyzer; negroni vodka sunrise.Johnny
+                        walker black farnell bunnahabhain my fair lady glenlivet lord calvert;
+                        jack and coke.`,
             hidden: true
         },
     ]
     
     // stores whole array as a state (which can be updated)
     const [qaList, setqaList] = useState(questionsAndAnswers);
-    
     
     /* 
         The lesson I learned here is that the page is rendered
@@ -145,15 +174,25 @@ const AboutSection = () => {
         setqaList(newqaList);
     }
     
+    // dynamic question & answer list
     const displayedQAList = qaList.map((qAndA, i) => {
         return (
-            <div className='answer'>
-                <h3>{qAndA.question}</h3>
+            <div>
+                {/* the question; clickable to display longer answer */}
                 <button
                     key={i}
-                    onClick={() => handleClick(i)}>expand
+                    onClick={() => handleClick(i)}
+                    onKeyDown={() => handleClick(i)}>
+                    <h3>
+                        <span className={qaList[i].hidden ? '' : 'rotate'}>&gt; </span>
+                        {qAndA.question}
+                    </h3>
                 </button>
+                
+                {/* short answer */}
                 <p>{qAndA.answer}</p>
+                
+                {/* extended answer, collapses */}
                 <div
                     key={i}
                     className={qaList[i].hidden ? 'hide-answer' : 'show-answer'}>
@@ -163,8 +202,6 @@ const AboutSection = () => {
         )
     })
 
-    
-    
     return (
         <StyledAbout id='about'>
             <h2>About me</h2>

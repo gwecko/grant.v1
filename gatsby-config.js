@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
     title: `<Grant Wecker />`,
-    // siteUrl: `https://www.yourdomain.tld`
     siteUrl: `https://grantwecker.com`
   },
   plugins: [
