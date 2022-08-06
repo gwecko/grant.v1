@@ -37,18 +37,21 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html{
+      min-height: -webkit-fill-available;
       width: 100%;
       scroll-behavior: smooth;
       box-sizing: border-box;
       display: flex;
-      overflow-x: hidden;
+      // overflow-x: hidden;
       background: linear-gradient(to right, var(--darkGreen), var(--green));
       background-size: cover;
-      @supports(padding:max(0px)) { env() }
-      padding: env(safe-area-inset-top) 
-                env(safe-area-inset-right) 
-                env(safe-area-inset-bottom) 
-                env(safe-area-inset-left);
+      @supports(padding:max(0px)){
+        env()
+      }
+      padding-top: env(safe-area-inset-top); 
+      padding-right: env(safe-area-inset-right); 
+      padding-bottom: env(safe-area-inset-bottom); 
+      padding-left: env(safe-area-inset-left);
   }
 
   body{
