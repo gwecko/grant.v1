@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       display: flex;
       // overflow-x: hidden;
-      background-color: linear-gradient(to right, var(--darkGreen), var(--green));
+      background-image: linear-gradient(to right, var(--darkGreen), var(--green));
       background-size: cover;
       // @supports(padding:max(0px)){
       //   env()
@@ -57,7 +57,6 @@ const GlobalStyle = createGlobalStyle`
   body{
     max-width: 100%;
     // height: 100%;
-    margin: 0;
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
