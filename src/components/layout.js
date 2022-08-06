@@ -38,30 +38,30 @@ const GlobalStyle = createGlobalStyle`
 
   html{
       min-height: -webkit-fill-available;
-      width: 100%;
+      min-width: 100%;
       scroll-behavior: smooth;
       box-sizing: border-box;
       display: flex;
       // overflow-x: hidden;
-      background: linear-gradient(to right, var(--darkGreen), var(--green));
+      background-color: linear-gradient(to right, var(--darkGreen), var(--green));
       background-size: cover;
-      @supports(padding:max(0px)){
-        env()
-      }
-      padding-top: env(safe-area-inset-top); 
-      padding-right: env(safe-area-inset-right); 
-      padding-bottom: env(safe-area-inset-bottom); 
-      padding-left: env(safe-area-inset-left);
+      // @supports(padding:max(0px)){
+      //   env()
+      // }
+      // padding-top: env(safe-area-inset-top); 
+      // padding-right: env(safe-area-inset-right); 
+      // padding-bottom: env(safe-area-inset-bottom); 
+      // padding-left: env(safe-area-inset-left);
   }
 
   body{
     max-width: 100%;
-    height: 100%;
+    // height: 100%;
     margin: 0;
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    overflow-x: hidden;
+    // overflow-x: hidden;
   }
 
   main{
@@ -83,8 +83,6 @@ const GlobalStyle = createGlobalStyle`
       padding: 0px 0px 0px 10px;
   }
 
-
-
   p{
       margin: 20px 0 0;
   }
@@ -98,7 +96,6 @@ const GlobalStyle = createGlobalStyle`
   h2{
     font-size: 2.5em;
     width: max-content;
-    // display: flex;
   }
 
   // little green decorative line

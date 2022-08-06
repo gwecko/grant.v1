@@ -103,7 +103,7 @@ const StyledProjectCard = styled.div`
   li{
     margin: 0 10px;
     @media (max-width: 600px){
-      margin: 0 auto;
+      margin: 0 0 0 10px;
     }
   }
 
