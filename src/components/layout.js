@@ -5,6 +5,7 @@ import Navbar from './navbar';
 import Footer from './footer';
 import { createGlobalStyle } from 'styled-components';
 
+
 const GlobalStyle = createGlobalStyle`
   :root{
     --darkGreen: #172B0A;
@@ -32,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     border: 0;
-    outline: O;
+    outline: 0;
   }
 
   html{
@@ -41,6 +42,8 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       display: flex;
       overflow-x: hidden;
+      background: linear-gradient(to right, var(--darkGreen), var(--green));
+      background-size: cover;
       @supports(padding:max(0px)) { env() }
       padding: env(safe-area-inset-top) 
                 env(safe-area-inset-right) 
@@ -55,7 +58,6 @@ const GlobalStyle = createGlobalStyle`
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    background: linear-gradient(to right, var(--darkGreen), var(--green));
     overflow-x: hidden;
   }
 
