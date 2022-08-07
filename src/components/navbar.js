@@ -7,6 +7,7 @@ const StyledNavbar = styled.nav`
 nav{
     display: flex;
     position: fixed;
+    top: 0;
     width: 100%;
     height: 70px;
     background: (rgba(23,43,10, .9));
@@ -61,7 +62,7 @@ a{
 }
 
 .hide-mobile{
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 600px){
         display: none;
     }
 }
@@ -92,11 +93,11 @@ const Navbar = () => {
     return (
         <StyledNavbar>
             <nav>
-                <span role="img">👾</span>
+                {/* This is the retro game emoji */}
+                <span>&#x1F47E;</span>
                 <ul>
                     {navbarLinks.map((link, i) => (
-                        <li
-                            key={i}>
+                        <li key={i}>
                             <Link to={link.url} className='underline-anim hide-mobile'>
                                 {link.name}</Link>
                         </li>

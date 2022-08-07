@@ -45,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
       // overflow-x: hidden;
       background-image: linear-gradient(to right, var(--darkGreen), var(--green));
       background-size: cover;
+      -webkit-background-size: cover;
       // @supports(padding:max(0px)){
       //   env()
       // }
