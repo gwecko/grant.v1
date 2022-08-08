@@ -42,17 +42,12 @@ const GlobalStyle = createGlobalStyle`
       scroll-behavior: smooth;
       box-sizing: border-box;
       display: flex;
-      // overflow-x: hidden;
       background-image: linear-gradient(to right, var(--darkGreen), var(--green));
       background-size: cover;
       -webkit-background-size: cover;
-      // @supports(padding:max(0px)){
-      //   env()
-      // }
-      // padding-top: env(safe-area-inset-top); 
-      // padding-right: env(safe-area-inset-right); 
-      // padding-bottom: env(safe-area-inset-bottom); 
-      // padding-left: env(safe-area-inset-left);
+      @media (max-width: @iphone-screen) {
+        background-attachment: scroll;
+      }
   }
 
   body{
@@ -81,6 +76,8 @@ const GlobalStyle = createGlobalStyle`
   section {
       margin: 20vw auto;
       padding: 0px 0px 0px 10px;
+      // This is so the navbar won't cut off the section
+      scroll-margin-top: 10vh;
   }
 
   p{

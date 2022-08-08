@@ -8,7 +8,6 @@ import { Icon } from '../icons';
 
 
 const StyledProjects = styled.section`
-
   h2{
     padding-bottom: 30px;
   }

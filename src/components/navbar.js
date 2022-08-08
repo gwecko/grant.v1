@@ -15,6 +15,9 @@ nav{
     -webkit-backdrop-filter: blur(30px);
     font-size: .9em;
     z-index: 5;
+    @media (max-width: @iphone-screen) {
+        display: none;
+    }
 }
 
 
