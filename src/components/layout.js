@@ -42,21 +42,19 @@ const GlobalStyle = createGlobalStyle`
       scroll-behavior: smooth;
       box-sizing: border-box;
       display: flex;
-      background-image: linear-gradient(to right, var(--darkGreen), var(--green));
-      background-size: cover;
-      -webkit-background-size: cover;
-      @media (max-width: @iphone-screen) {
-        background-attachment: scroll;
-      }
   }
 
   body{
     max-width: 100%;
-    // height: 100%;
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    // overflow-x: hidden;
+    background-image: linear-gradient(to right, var(--darkGreen), var(--green));
+    background-size: cover;
+    -webkit-background-size: cover;
+    @media (max-width: @iphone-screen) {
+      background-attachment: scroll;
+    }
   }
 
   main{
