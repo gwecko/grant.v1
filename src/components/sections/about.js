@@ -10,7 +10,7 @@ const StyledAbout = styled.section`
     
     h3{
         padding: 10px 0;
-        margin-top: 10px;
+        margin-top: 30px;
         display: inline-flex;
         transition: color .2s;
         &:hover, 
@@ -75,6 +75,11 @@ const StyledAbout = styled.section`
     @media screen and (max-width: 768px) {
             padding: 10px;
     }
+
+    #line-through{
+        text-decoration: line-through;
+        color: var(--white);
+    }
 `
 
 const AboutSection = () => {
@@ -86,57 +91,54 @@ const AboutSection = () => {
     const questionsAndAnswers = [
         {
             question: "Who are you?",
-            answer: "Self-taught web developer with academic CS background.",
-            answer_ext: `I graduated from The Ohio State University with a degree in 
-                        Communication Technology and a minor in Computer Science. I've
-                        since taught myself the ins and outs of web development, mostly 
-                        through Udemy and "browsing the docs".`,
+            answer: "Web developer, self-taught on top of academic foundation.",
+            answer_ext: <p>I graduated from The Ohio State University with a degree in 
+                Communication Technology and a minor in Computer Science.<br/><br/>I've
+                since taught myself the ins and outs of web development, mostly 
+                 through Udemy, seeing what others do, and browsing documentation.
+                </p>,
             hidden: true
         },
         {
             question: "What got you here?",
             answer: "An obsession in website design and digital experiences.",
-            answer_ext: `I had a rough start into the world of programming... text text text text textt text textt txt etx tetextx ttxtex`,
+            answer_ext: <p>I had zero coding experience going into college.<br/><br/>After my intro 
+                to C++ class, things fell apart. During my software 1 class, my 
+                laptop had to be sent away for repairs and I didn't seek the help I
+                 needed. One of the few times I went to seek help, I accidentally
+                knocked over a shelf of my professor's office. And I finished that 
+                course with an F.<br/><br/>But I loved to learn about how all the systems we
+                use function, and I wanted to create my own pieces of software. So
+                here I am.<br/><br/>And I haven't knocked over any shelves since.
+                </p>,
             hidden: true
         },
         {
             question: "What technologies do you work with?",
-            answer: "Javascript, React, node.js, Mongo",
-            answer_ext: `Liquor ipsum dolor sit amet skyy glendullan, rose kennedy
-                        cocktail, polmos krakow hiram walker, old mr. boston sex on
-                        bloody mary choking hazard paralyzer; negroni vodka sunrise. Johnny
-                        walker black farnell bunnahabhain my fair lady glenlivet lord calvert;
-                        jack and coke.`,
-            hidden: true
-        },
-        {
-            question: "Anything else?",
-            answer: "I have demonstrated use with Express, C, Bootstrap, Gatsby, and API integration.",
-            answer_ext: `Liquor ipsum dolor sit amet skyy glendullan, rose kennedy
-                        cocktail, polmos krakow hiram walker, old mr.boston sex on
-                        bloody mary choking hazard paralyzer; negroni vodka sunrise.Johnny
-                        walker black farnell bunnahabhain my fair lady glenlivet lord calvert;
-                        jack and coke.`,
+            answer: "Javascript, React, Gatsby, node.js, and Mongo",
+            answer_ext: <p>In my <a href='/#projects'>Projects</a> section I list the integral tech for each project. 
+                I liked the JS-React-Gatsby stack that I used to build this site so I'm
+                going to continue with those for now.<br/><br/>However, if I see a website I really like, 
+                I'll find out what makes it spin and learn that.
+                </p>,
             hidden: true
         },
         {
             question: "What are your goals?",
             answer: "Develop alongside a group of individuals with experience greater than my own.",
-            answer_ext: `Liquor ipsum dolor sit amet skyy glendullan, rose kennedy
-                        cocktail, polmos krakow hiram walker, old mr.boston sex on
-                        bloody mary choking hazard paralyzer; negroni vodka sunrise.Johnny
-                        walker black farnell bunnahabhain my fair lady glenlivet lord calvert;
-                        jack and coke.`,
+            answer_ext: <p>I understand the value of collaboration and bouncing off peers for ideas.<br/><br/>
+                At one of the coffee places I frequent, the barista is also learning web
+                development. I can look forward to asking each other what we've been working on and
+                finding solutions. Wherever I work, I would like to find more of that collaboration.
+                <br/><br/>Eventually, I'd like to be able to do 5x what I can do now in a fraction of
+                the time.
+                </p>,
             hidden: true
         },
         {
             question: "Who are you, really?",
-            answer: "Ohio native with an enthusiasm for tall women.",
-            answer_ext: `Liquor ipsum dolor sit amet skyy glendullan, rose kennedy
-                        cocktail, polmos krakow hiram walker, old mr.boston sex on
-                        bloody mary choking hazard paralyzer; negroni vodka sunrise.Johnny
-                        walker black farnell bunnahabhain my fair lady glenlivet lord calvert;
-                        jack and coke.`,
+            answer: <p>Ohio native with an enthusiasm for <span id='line-through'>tall women</span>my uncle Dave!!</p>,
+            answer_ext: ``,
             hidden: true
         },
     ]
@@ -182,7 +184,7 @@ const AboutSection = () => {
     const displayedQAList = qaList.map((qAndA, i) => {
         return (
             <div>
-                {/* the question; clickable to display longer answer */}
+                {/* the question; clicked to show collapsable answer */}
                 <button
                     key={i}
                     onClick={() => handleClick(i)}
@@ -196,11 +198,11 @@ const AboutSection = () => {
                 {/* short answer */}
                 <p>{qAndA.answer}</p>
                 
-                {/* extended answer, collapses */}
+                {/* extended answer, ~~collapses~~ */}
                 <div
                     key={i}
                     className={qaList[i].hidden ? 'hide-answer' : 'show-answer'}>
-                    <p>{qAndA.answer_ext}</p>
+                    <div>{qAndA.answer_ext}</div>
                 </div>
             </div>
         )
