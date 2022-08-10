@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import Head from './head';
+import { Head } from './head';
 import Navbar from './navbar';
 import Footer from './footer';
 import { createGlobalStyle } from 'styled-components';
@@ -115,19 +114,9 @@ const GlobalStyle = createGlobalStyle`
 
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
   
   return (
     <>
-      <title>{data.site.siteMetadata.title}</title>
       <Head />    
       <GlobalStyle />
       <Navbar />

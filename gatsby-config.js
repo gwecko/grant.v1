@@ -1,22 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: `<Grant Wecker />`,
-    siteUrl: `https://grantwecker.com`
+    siteUrl: `https://grantwecker.com`,
+    description: `Grant Wecker is a software developer currently focusing on web applications.`,
   },
+  
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-robots-txt",
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //       name: "images",
-    //       path: "./src/images/",
-    //   },
-    //   __key: "images"
-    // },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
