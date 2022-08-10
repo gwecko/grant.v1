@@ -2,7 +2,7 @@ import React from "react";
 import { siteMetadata } from "../../gatsby-config";
 
 
-export const SEO = ({children }) => {
+export const Head = ({children }) => {
     // const { title: defaultTitle, description: defaultDescription, siteUrl } = useSiteMetadata()
     const seo = {
         title: siteMetadata.title,

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Head } from '../pages';
+import { Head } from './head';
 import Navbar from './navbar';
 import Footer from './footer';
 import { createGlobalStyle } from 'styled-components';
@@ -48,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
+    // iPhone notch space needs a solid color to integrate address bar
     background: var(--darkGreen);
     background-size: cover;
     -webkit-background-size: cover;
@@ -58,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
 
   main{
       padding: 100px 20%;
-      background-image: linear-gradient(to right, var(--darkGreen), var(--green));
+      background: linear-gradient(0deg, rgba(23,43,10,1) 0%, rgba(72,86,50,1) 40%, rgba(23,43,10,1) 100%);
       @media screen and (max-width: 480px) {
         padding: 5%;
       }

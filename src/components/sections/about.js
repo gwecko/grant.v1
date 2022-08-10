@@ -116,7 +116,7 @@ const AboutSection = () => {
             question: "What technologies do you work with?",
             answer: "Javascript, React, Gatsby, node.js, and Mongo",
             answer_ext: <p>In my <a href='/#projects'>Projects</a> section I list the integral tech for each project. 
-                I liked the JS-React-Gatsby stack that I used to build this site so I'm
+                I liked the JS-React-Gatsby stack used to build this site so I'm
                 going to continue with those for now.<br/><br/>However, if I see a website I really like, 
                 I'll find out what makes it spin and learn that.
                 </p>,

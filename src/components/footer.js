@@ -13,6 +13,7 @@ const StyledFooter = styled.footer`
 
 const StyledSocialsLine = styled.div`
     margin-left: 3rem;
+    filter: drop-shadow(0px -3px 7px var(--darkGreen));
     
     @media (max-width: 600px){
         padding-left: 2rem;
@@ -45,6 +46,7 @@ const StyledSocialsLine = styled.div`
       height: calc(10vh + 50px);
       margin: 0 auto;
       background-color: var(--green);
+      filter: drop-shadow(0px -3px 7px var(--darkGreen));
     }
 `;
 
@@ -53,6 +55,7 @@ const StyledEmailLine = styled.div`
     position: fixed;
     bottom: 0px;
     right: 4rem;
+    filter: drop-shadow(0px -3px 7px var(--darkGreen));
 
     a{
         writing-mode: vertical-lr;
@@ -71,7 +74,6 @@ const StyledEmailLine = styled.div`
         margin-left: .6rem ;
         height: calc(10vh + 50px);
         background-color: var(--green);
-        filter: drop-shadow(0px -3px 7px var(--darkGreen));
     }
 `
 
