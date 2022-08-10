@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Head } from './head';
+import { Head } from '../pages';
 import Navbar from './navbar';
 import Footer from './footer';
 import { createGlobalStyle } from 'styled-components';
@@ -40,15 +40,16 @@ const GlobalStyle = createGlobalStyle`
       min-width: 100%;
       scroll-behavior: smooth;
       box-sizing: border-box;
-      display: flex;
   }
 
   body{
-    max-width: 100%;
+    margin-top: 0px;
+    width: 100%;
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    background-image: linear-gradient(to right, var(--darkGreen), var(--green));
+    // background-image: linear-gradient(to right, var(--darkGreen), var(--green));
+    background: lightsteelblue;
     background-size: cover;
     -webkit-background-size: cover;
     @media (max-width: @iphone-screen) {
@@ -118,12 +119,14 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head />
-      <GlobalStyle />
-      <Navbar />
-      <main>
-        {children}
-      </main>
-      <Footer />
+      <div id='root'>
+        <GlobalStyle />
+        <Navbar />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

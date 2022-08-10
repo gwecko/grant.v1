@@ -4,11 +4,14 @@ module.exports = {
     siteUrl: `https://grantwecker.com`,
     description: `Grant Wecker is a software developer currently focusing on web applications.`,
   },
+  
   trailingSlash: `never`,
+  
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-gatsby-cloud",
     "gatsby-transformer-sharp",
     "gatsby-plugin-robots-txt",
     {
@@ -32,6 +35,5 @@ module.exports = {
         path: `${__dirname}/projects/`
       }
     },
-    "gatsby-plugin-gatsby-cloud"
   ]
 };
