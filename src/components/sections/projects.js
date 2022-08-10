@@ -192,18 +192,19 @@ const ProjectsSection = () => {
   // make a card for each project
   const projectCard = data.allMdx.nodes.map((node, i) => {
     const image = getImage(node.frontmatter.image);
+    const { name, repo, url } = node.frontmatter;
     
     return (
       <div className='card'
         key={i}
         hidden={activeTabId !== i}>
         <div className='card-top'>
-          <h3 id="title">{node.frontmatter.name}</h3>
+          <h3 id="title">{name}</h3>
           <ul>
             <li>
-              <a href={node.frontmatter.repo}
+              <a href={repo}
                 target="_blank" rel="noreferrer noopener"
-                aria-label={`${node.frontmatter.name} github`}>
+                aria-label={`${name} github`}>
                 <Icon name='github' /></a></li>
             <li>
               <a href={node.frontmatter.url}
@@ -218,9 +219,9 @@ const ProjectsSection = () => {
         </div>
         <div className='img'>
           <br />
-          <a href={node.frontmatter.url}
+          <a href={url}
             target="_blank" rel="noreferrer noopener">
-            <GatsbyImage image={image} />
+            <GatsbyImage image={image} alt={name} />
           </a>
         </div>
       </div>

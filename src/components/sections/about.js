@@ -48,6 +48,11 @@ const StyledAbout = styled.section`
         display: block;
     }
 
+    mark{
+        color: inherit;
+        background-color: var(--darkGreen);
+    }
+
     .show-answer{
         margin: 10px 0px 0px 0px;
         padding: 0px 0px 0px 10px;
@@ -91,9 +96,10 @@ const AboutSection = () => {
         {
             question: "Who are you?",
             answer: "Web developer, self-taught on top of academic foundation.",
-            answer_ext: <p>I graduated from The Ohio State University with a degree in 
-                Communication Technology and a minor in Computer Science.<br/><br/>I've
-                since taught myself the ins and outs of web development, mostly 
+            answer_ext: <p>I graduated from <mark>The Ohio State University</mark> with a degree in 
+                Communication Technology and a minor in Computer Science.
+                <br /><br />
+                I've since taught myself the ins and outs of web development, mostly 
                  through Udemy, seeing what others do, and browsing documentation.
                 </p>,
             hidden: true
@@ -101,36 +107,47 @@ const AboutSection = () => {
         {
             question: "What got you here?",
             answer: "An obsession in website design and digital experiences.",
-            answer_ext: <p>I had zero coding experience going into college.<br/><br/>After my intro 
+            answer_ext: <p>I had <mark>zero coding experience</mark> going into college.
+                <br/><br/>
+                After my intro 
                 to C++ class, things fell apart. During my software 1 class, my 
-                laptop had to be sent away for repairs and I didn't seek the help I
-                 needed. One of the few times I went to seek help, I accidentally
+                laptop had to be sent away for repairs and I didn't seek the help I 
+                needed. One of the few times I went to seek help, I accidentally
                 knocked over a shelf of my professor's office. And I finished that 
-                course with an F.<br/><br/>But I loved to learn about how all the systems we
-                use function, and I wanted to create my own pieces of software. So
-                here I am.<br/><br/>And I haven't knocked over any shelves since.
+                course <mark>with an F</mark>.
+                <br/><br/>
+                But I <mark>loved to learn how</mark> the systems we
+                use function, and I wanted to <mark>create my own pieces of software</mark>. So
+                here I am.
+                <br/><br/>
+                And I haven't knocked over any shelves since.
                 </p>,
             hidden: true
         },
         {
             question: "What technologies do you work with?",
-            answer: "Javascript, React, Gatsby, node.js, and Mongo",
+            answer: "Most recently Javascript, React, Gatsby, node.js, and Mongo",
             answer_ext: <p>In my <a href='/#projects'>Projects</a> section I list the integral tech for each project. 
-                I liked the JS-React-Gatsby stack used to build this site so I'm
-                going to continue with those for now.<br/><br/>However, if I see a website I really like, 
-                I'll find out what makes it spin and learn that.
+                I liked the <mark>JS-React-Gatsby-GraphQL</mark> stack used to build this site so I'm
+                going to continue with those for now.
+                <br/><br/>
+                However, if I see a website or app I really like, 
+                I may find out what makes it spin and learn that.
+                <br/><br/>
+                In an academic setting, I've worked with <mark> Java, C, and briefly Python</mark>. Experienced with HTML/CSS.
                 </p>,
             hidden: true
         },
         {
             question: "What are your goals?",
-            answer: "Develop alongside a group of individuals with experience greater than my own.",
-            answer_ext: <p>I understand the value of collaboration and bouncing off peers for ideas.<br/><br/>
+            answer: "Develop alongside a group of individuals with experience greater than my own to create .",
+            answer_ext: <p>I understand the value of <mark>collaboration for solutions and creativity</mark>.
+                <br /><br />
                 At one of the coffee places I frequent, the barista is also learning web
-                development. I can look forward to asking each other what we've been working on and
+                development. Going there, I can look forward to asking what we've been working on and
                 finding solutions. Wherever I work, I would like to find more of that collaboration.
-                <br/><br/>Eventually, I'd like to be able to do 5x what I can do now in a fraction of
-                the time.
+                <br /><br />
+                I want to do <mark>5x what I'm able to now in a fraction of the time</mark>.
                 </p>,
             hidden: true
         },

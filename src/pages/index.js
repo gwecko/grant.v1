@@ -9,12 +9,14 @@ import ContactSection from "../components/sections/contact";
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <GreetingSection />
-      <AboutSection />
-      <ProjectsSection />
-      <ContactSection />
-    </Layout>
+    <>
+      <Layout>
+        <GreetingSection />
+        <ProjectsSection />
+        <AboutSection />
+        <ContactSection />
+      </Layout>
+    </>
   );
 };
 export default IndexPage;

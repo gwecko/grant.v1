@@ -3,21 +3,15 @@ import { siteMetadata } from "../../gatsby-config";
 
 
 export const Head = ({children }) => {
-    // const { title: defaultTitle, description: defaultDescription, siteUrl } = useSiteMetadata()
-    const seo = {
-        title: siteMetadata.title,
-        description: siteMetadata.description,
-        url: siteMetadata.siteUrl,
-    }
 
     return (
         <>
+            <meta http-equiv="content-language" content="en-us"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-            <meta name="robots" content="all" />
-            <title>{seo.title}</title>
-            <meta name="description" content={seo.description} />
+            <title>{siteMetadata.title}</title>
+            <meta name="description" content={siteMetadata.description} />
             <meta name="apple-mobile-web-app-capable" content="yes" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
             {children}
         </>
     )
