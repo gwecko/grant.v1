@@ -48,8 +48,7 @@ const GlobalStyle = createGlobalStyle`
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    // background-image: linear-gradient(to right, var(--darkGreen), var(--green));
-    background: lightsteelblue;
+    background: var(--darkGreen);
     background-size: cover;
     -webkit-background-size: cover;
     @media (max-width: @iphone-screen) {
@@ -59,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
 
   main{
       padding: 100px 20%;
-      
+      background-image: linear-gradient(to right, var(--darkGreen), var(--green));
       @media screen and (max-width: 480px) {
         padding: 5%;
       }
