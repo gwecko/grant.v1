@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
 
 const StyledSocialsLine = styled.div`
     margin-left: 3rem;
-    filter: drop-shadow(0px -3px 7px var(--darkGreen));
+    filter: var(--dropShadow);
     
     @media (max-width: 600px){
         padding-left: 2rem;
@@ -55,7 +55,7 @@ const StyledEmailLine = styled.div`
     position: fixed;
     bottom: 0px;
     right: 4rem;
-    filter: drop-shadow(0px -3px 7px var(--darkGreen));
+    filter: var(--dropShadow);
 
     a{
         writing-mode: vertical-lr;

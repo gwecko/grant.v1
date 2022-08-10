@@ -66,14 +66,14 @@ const StyledProjectCard = styled.div`
   .card{
     background: rgba(142, 153, 166, .07);
     /* top-right-bottom-left */
-    padding: 25px 40px 40px 35px;
+    padding: 25px 35px 40px 35px;
     border-radius: 5px;
     margin-top: 0;
     margin-bottom: 60px;
     border-left: 5px solid var(--red);
     @media (max-width: 480px) { 
       border: none;
-      background: linear-gradient(to right, rgba(142, 153, 166, 0), rgba(23, 43, 10, .3))
+      background: linear-gradient(to left, rgba(142, 153, 166, .1), rgba(23, 43, 10, .4));
     }
   }
 

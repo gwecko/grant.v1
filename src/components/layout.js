@@ -12,19 +12,23 @@ const GlobalStyle = createGlobalStyle`
     --gray: #8E99A6;
     --white: #F0EBE0;
     --red: #DA465C;
+    --dropShadow: drop-shadow(0px -3px 7px var(--darkGreen));
   }
 
   /* Scrollbar stuff */
   *::-webkit-scrollbar {
       width: 14px;
+      @media (max-width: 480px){
+        width: 0px;
+    }
   }
   *::-webkit-scrollbar-track {
       background: var(--green);
   }
   *::-webkit-scrollbar-thumb {
       background-color: var(--darkGreen);
-      border-radius: 7px;
-      border: 2px solid var(--green);
+      border-radius: 3px;
+      border: 0px solid var(--green);
   }
   /* END: Scrollbar stuff */
 
@@ -59,6 +63,7 @@ const GlobalStyle = createGlobalStyle`
 
   main{
       padding: 100px 20%;
+      overflow-x: hidden;
       background: linear-gradient(0deg, rgba(23,43,10,1) 0%, rgba(72,86,50,1) 40%, rgba(23,43,10,1) 100%);
       @media screen and (max-width: 480px) {
         padding: 5%;
@@ -103,7 +108,8 @@ const GlobalStyle = createGlobalStyle`
     height: 2px;
     margin-left: 20px;
     background-color: var(--green);
-    @media (max-width: 600px){
+    filter: var(--dropShadow);
+    @media (max-width: 800px){
       display: none;
     }
   }

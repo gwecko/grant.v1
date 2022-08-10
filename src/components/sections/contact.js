@@ -4,8 +4,11 @@ import { email } from '../../config.js';
 import { Icon } from '../icons';
 
 const StyledContact = styled.section`
+    
     .container{
         display: flex;
+        align-items: center;
+        padding-top: 30px;
         @media screen and (max-width: 600px){
             display: block;
             text-align: center;
@@ -15,9 +18,15 @@ const StyledContact = styled.section`
         }
     }
 
+    p{
+        max-width: 500px;
+        margin: 0 auto;
+
+    }
+
     button{
-        margin: 0px 20px;
-        padding: 0px;
+        margin: 0px auto;
+        padding: 0px 40px 0px 20px;
         background: rgba(0,0,0,0);
         border: none;
     }
