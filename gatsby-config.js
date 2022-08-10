@@ -4,7 +4,7 @@ module.exports = {
     siteUrl: `https://grantwecker.com`,
     description: `Grant Wecker is a software developer currently focusing on web applications.`,
   },
-  
+  trailingSlash: `never`,
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",

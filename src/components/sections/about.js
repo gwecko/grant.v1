@@ -13,8 +13,7 @@ const StyledAbout = styled.section`
         margin-top: 30px;
         display: inline-flex;
         transition: color .2s;
-        &:hover, 
-        &:active{
+        &:hover{
             cursor: pointer;
             color: var(--red);
             transition: color 0s;
