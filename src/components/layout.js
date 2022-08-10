@@ -117,15 +117,15 @@ const Layout = ({ children }) => {
   
   return (
     <>
-      <Head />    
+      <Head />
       <GlobalStyle />
       <Navbar />
       <main>
-          {children}
+        {children}
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
 export default Layout;
