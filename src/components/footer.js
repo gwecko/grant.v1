@@ -3,10 +3,13 @@ import styled from "styled-components";
 import { email, socialMedia } from "../config";
 import { Icon } from './icons';
 
-const StyledFooter = styled.footer`
+const StyledSideLinks = styled.footer`
     position: fixed;
     bottom: 0;
     @media (max-width: 600px){
+        display: none
+    }
+    @media (max-height: 480px){
         display: none
     }
 `;
@@ -78,7 +81,7 @@ const StyledEmailLine = styled.div`
 `
 
 
-const Footer = () => {
+const SideLinks = () => {
     
     const socialsLine = (
         <ul>
@@ -98,11 +101,11 @@ const Footer = () => {
     );
     
     return (
-        <StyledFooter>
+        <StyledSideLinks>
             <StyledSocialsLine>{socialsLine}</StyledSocialsLine>
             <StyledEmailLine>{emailLine}</StyledEmailLine>
-        </StyledFooter>
+        </StyledSideLinks>
     )
 }
 
-export default Footer;
+export default SideLinks;

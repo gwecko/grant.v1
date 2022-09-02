@@ -2,23 +2,35 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { navbarLinks } from "../config";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+
 
 const StyledNavbar = styled.nav`
-nav{
-    display: flex;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    background: (rgba(23,43,10, .9));
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    font-size: .9em;
-    z-index: 5;
-    @media (max-width: @iphone-screen) {
-        display: none;
+
+display: flex;
+position: fixed;
+top: 0;
+width: 100%;
+height: 70px;
+background: (rgba(23,43,10, .9));
+backdrop-filter: blur(30px);
+-webkit-backdrop-filter: blur(30px);
+font-size: .9em;
+z-index: 5;
+
+
+// fadedown
+    .fadedown-enter {
+        opacity: 0.01;
+        transform: translateY(-20px);
+        transition: opacity 300ms var(--easing), transform 300ms var(--easing);
     }
-}
+    
+    .fadedown-enter-active {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+    }
 
 
 ul{
@@ -95,21 +107,18 @@ span{
 const Navbar = () => {
     return (
         <StyledNavbar>
-            <nav>
-                {/* This is the retro game emoji */}
-                <span>&#x1F47E;</span>
-                <ul>
-                    {navbarLinks.map((link, i) => (
-                        <li key={i}>
-                            <Link to={link.url} className='underline-anim hide-mobile'>
-                                {link.name}</Link>
-                        </li>
-                    ))
-                    }
-                    <li><a href="/placeholder.pdf" className="resume-link">Résumé</a>
+            {/* This is the retro game emoji */}
+            <span>&#x1F47E;</span>
+            <ul>
+                {navbarLinks.map((link, i) => (
+                    <li key={i}>
+                        <Link to={link.url} className='underline-anim hide-mobile'>
+                            {link.name}</Link>
                     </li>
-                </ul>
-            </nav>
+                ))}
+                <li><a href="/placeholder.pdf" className="resume-link">Resume</a>
+                </li>
+            </ul>
         </StyledNavbar>
     )
 }

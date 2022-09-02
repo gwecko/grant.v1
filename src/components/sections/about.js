@@ -95,12 +95,12 @@ const AboutSection = () => {
     const questionsAndAnswers = [
         {
             question: "Who are you?",
-            answer: "Web developer, self-taught on top of academic foundation.",
+            answer: "Web developer, self-taught on top of academic CS foundation.",
             answer_ext: <p>I graduated from <mark>The Ohio State University</mark> with a degree in 
                 Communication Technology and a minor in Computer Science.
                 <br /><br />
-                I've since taught myself the ins and outs of web development, mostly 
-                 through Udemy, seeing what others do, and browsing documentation.
+                I've since taught myself the ins and outs of web development, <mark>mostly 
+                    through project-based learing</mark>, Udemy, seeing what others do, and browsing documentation.
                 </p>,
             hidden: true
         },
@@ -126,13 +126,13 @@ const AboutSection = () => {
         },
         {
             question: "What technologies do you work with?",
-            answer: "Most recently Javascript, React, Gatsby, node.js, and Mongo",
+            answer: "Most recently Javascript, React, Gatsby, node.js, and Express",
             answer_ext: <p>In my <a href='/#projects'>Projects</a> section I list the integral tech for each project. 
                 I liked the <mark>JS-React-Gatsby-GraphQL</mark> stack used to build this site so I'm
                 going to continue with those for now.
                 <br/><br/>
                 However, if I see a website or app I really like, 
-                I may find out what makes it spin and learn that.
+                I may find out what makes it spin and learn that in order to make my own version.
                 <br/><br/>
                 In an academic setting, I've worked with <mark> Java, C, and briefly Python</mark>. Experienced with HTML/CSS.
                 </p>,
@@ -140,12 +140,12 @@ const AboutSection = () => {
         },
         {
             question: "What are your goals?",
-            answer: "Develop alongside a group of individuals with experience greater than my own to create .",
+            answer: "Develop alongside a group of individuals with experience greater than my own to create impactful software.",
             answer_ext: <p>I understand the value of <mark>collaboration for solutions and creativity</mark>.
                 <br /><br />
                 At one of the coffee places I frequent, the barista is also learning web
-                development. Going there, I can look forward to asking what we've been working on and
-                finding solutions. Wherever I work, I would like to find more of that collaboration.
+                development. Going there, I can look forward to discussing with <a href='https://www.alexisquintuna.com'>Alex Quintuna</a> what we've been working on and
+                finding solutions. Even with different backgrounds, we have similar interests. Wherever I work, I would like to find more of that collaboration.
                 <br /><br />
                 I want to do <mark>5x what I'm able to now in a fraction of the time</mark>.
                 </p>,
@@ -153,8 +153,15 @@ const AboutSection = () => {
         },
         {
             question: "Who are you, really?",
-            answer: <p>Ohio native with an enthusiasm for <span id='line-through'>tall women</span>my uncle Dave!!</p>,
-            answer_ext: ``,
+            answer: <p>Ohio native who grew up in a big family with lots of animals.</p>,
+            answer_ext: <p><mark>As a kid I dreamt of
+                being an architect</mark>—teachers would take polaroids of the many designs of wood block structures I built
+                in preschool. That career interest went away, but has <mark>resurfaced in the appreciation
+                    for design of digital experiences.</mark> <br /><br />One of my favorite things to do is <mark>ask for feedback</mark> on
+                my projects, like when my uncle said a (finished) version of this site was "bland". He was right! <mark>And I'm working to make it less bland.</mark>
+                <br /><br /> Beyond that, I love to ride and travel on my motorcycle, sweat in the gym,
+                and spend time behind the bar providing others with a good time.
+                </p>,
             hidden: true
         },
     ]

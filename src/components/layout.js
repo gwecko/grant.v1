@@ -3,6 +3,7 @@ import { Head } from './head';
 import Navbar from './navbar';
 import Footer from './footer';
 import { createGlobalStyle } from 'styled-components';
+import SideLinks from './footer';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -15,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     --dropShadow: drop-shadow(0px -3px 7px var(--darkGreen));
   }
 
-  /* Scrollbar stuff */
+  /* Scrollbar configuration */
   *::-webkit-scrollbar {
       width: 14px;
       @media (max-width: 480px){
@@ -27,10 +28,10 @@ const GlobalStyle = createGlobalStyle`
   }
   *::-webkit-scrollbar-thumb {
       background-color: var(--darkGreen);
-      border-radius: 3px;
-      border: 0px solid var(--green);
+      border-radius: 8px;
+      border: 2px solid var(--green);
   }
-  /* END: Scrollbar stuff */
+  /* END: Scrollbar configuration */
 
   *{
     margin: 0;
@@ -41,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
 
   html{
       min-height: -webkit-fill-available;
+      height: 100%;
       min-width: 100%;
       scroll-behavior: smooth;
       box-sizing: border-box;
@@ -49,6 +51,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     margin-top: 0px;
     width: 100%;
+    height: 100%;
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
@@ -107,8 +110,7 @@ const GlobalStyle = createGlobalStyle`
     width: 300px;
     height: 2px;
     margin-left: 20px;
-    background-color: var(--green);
-    filter: var(--dropShadow);
+    background-color: var(--white);
     @media (max-width: 800px){
       display: none;
     }
@@ -131,7 +133,7 @@ const Layout = ({ children }) => {
         <main>
           {children}
         </main>
-        <Footer />
+        <SideLinks />
       </div>
     </>
   );
