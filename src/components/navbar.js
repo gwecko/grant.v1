@@ -116,7 +116,7 @@ const Navbar = () => {
                             {link.name}</Link>
                     </li>
                 ))}
-                <li><a href="/2022.pdf" className="resume-link">Resume</a>
+                <li><a href="/resume.pdf" className="resume-link">Resume</a>
                 </li>
             </ul>
         </StyledNavbar>
