@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Head } from './head';
 import Navbar from './navbar';
-import Footer from './footer';
+import Footer from './sideLinks';
 import { createGlobalStyle } from 'styled-components';
-import SideLinks from './footer';
+import SideLinks from './sideLinks';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -126,7 +125,6 @@ const Layout = ({ children }) => {
   
   return (
     <>
-      <Head />
       <div id='root'>
         <GlobalStyle />
         <Navbar />

@@ -11,6 +11,7 @@ const StyledAbout = styled.section`
     h3{
         padding: 10px 0;
         margin-top: 30px;
+        font-size: 1.5rem;
         display: inline-flex;
         transition: color .2s;
         &:hover{
@@ -76,6 +77,11 @@ const StyledAbout = styled.section`
         position: relative;
     }
 
+    h4{
+        padding-bottom: 15px;
+        font-size: 1.1rem;
+    }
+
     @media screen and (max-width: 768px) {
             padding: 10px;
     }
@@ -94,7 +100,7 @@ const AboutSection = () => {
     */
     const questionsAndAnswers = [
         {
-            question: "Who are you?",
+            question: "Who is Grant?",
             answer: "Web developer, self-taught on top of academic CS foundation.",
             answer_ext: <p>I graduated from <mark>The Ohio State University</mark> with a degree in 
                 Communication Technology and a minor in Computer Science.
@@ -105,7 +111,7 @@ const AboutSection = () => {
             hidden: true
         },
         {
-            question: "What got you here?",
+            question: "What motivates Grant?",
             answer: "An obsession in website design and digital experiences.",
             answer_ext: <p>I had <mark>zero coding experience</mark> going into college.
                 <br/><br/>
@@ -125,7 +131,7 @@ const AboutSection = () => {
             hidden: true
         },
         {
-            question: "What technologies do you work with?",
+            question: "What technologies does he use to create?",
             answer: "Most recently Javascript, React, Gatsby, node.js, and Express",
             answer_ext: <p>In my <a href='/#projects'>Projects</a> section I list the integral tech for each project. 
                 I liked the <mark>JS-React-Gatsby-GraphQL</mark> stack used to build this site so I'm
@@ -139,7 +145,7 @@ const AboutSection = () => {
             hidden: true
         },
         {
-            question: "What are your goals?",
+            question: "What are his professional goals?",
             answer: "Develop alongside a group of individuals with experience greater than my own to create impactful software.",
             answer_ext: <p>I understand the value of <mark>collaboration for solutions and creativity</mark>.
                 <br /><br />
@@ -152,7 +158,7 @@ const AboutSection = () => {
             hidden: true
         },
         {
-            question: "Who are you, really?",
+            question: "Tell me more about Grant!",
             answer: <p>Ohio native who grew up in a big family with lots of animals.</p>,
             answer_ext: <p><mark>As a kid I dreamt of
                 being an architect</mark>—teachers would take polaroids of the many designs of wood block structures I built
@@ -203,6 +209,11 @@ const AboutSection = () => {
         setqaList(newqaList);
     }
     
+    function handleMouseEnter(key) {
+        qaList[key].hidden = true;
+        handleClick(key);
+    }
+    
     // dynamic question & answer list
     const displayedQAList = qaList.map((qAndA, i) => {
         return (
@@ -211,21 +222,23 @@ const AboutSection = () => {
                 <button
                     key={i}
                     onClick={() => handleClick(i)}
-                    onKeyDown={() => handleClick(i)}>
+                    onKeyDown={() => handleClick(i)}
+                    onMouseEnter={() => handleMouseEnter(i)}
+                >
                     <h3>
                         <span className={qaList[i].hidden ? '' : 'rotate'}>&gt; </span>
                         {qAndA.question}
                     </h3>
                 </button>
                 
-                {/* short answer */}
-                <p>{qAndA.answer}</p>
-                
-                {/* extended answer, ~~collapses~~ */}
+                {/* ~~collapses~~ */}
                 <div
                     key={i}
                     className={qaList[i].hidden ? 'hide-answer' : 'show-answer'}>
-                    <div>{qAndA.answer_ext}</div>
+                    {/* short answer */}
+                    <h4>{qAndA.answer}</h4>
+                    {/* extended answer */}
+                    <p>{qAndA.answer_ext}</p>
                 </div>
             </div>
         )

@@ -179,7 +179,7 @@ const ProjectsSection = () => {
                 key={i}
                 onClick={() => setActiveTabId(i)}
                 onKeyDown={() => setActiveTabId(i)}>
-                {name}
+                <h3>{name}</h3>
               </button>
             </li>
           ))

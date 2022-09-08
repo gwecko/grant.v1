@@ -4,6 +4,7 @@ import GreetingSection from "../components/sections/greeting";
 import AboutSection from "../components/sections/about";
 import ProjectsSection from "../components/sections/projects";
 import ContactSection from "../components/sections/contact";
+import { siteMetadata } from "../../gatsby-config";
 
 
 
@@ -21,3 +22,25 @@ const IndexPage = () => {
 };
 export default IndexPage;
 
+
+// Gatsby Head API -- must be defined in page, not a component
+export const Head = () => {
+
+  const { title, description, image, siteUrl, icon } = siteMetadata;
+  return (
+    <>
+      <meta http-equiv="content-language" content="en-us" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="image" content={image} />
+      <meta name="icon" content={icon} />
+
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={siteUrl} />
+      <meta property="og:type" content="website" />
+    </>
+  )
+}
