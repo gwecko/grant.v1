@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Navbar from './navbar';
-import Footer from './sideLinks';
 import { createGlobalStyle } from 'styled-components';
 import SideLinks from './sideLinks';
 
@@ -54,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    // iPhone notch space needs a solid color to integrate address bar
+    // iPhone notch space needs a solid color in 'body' to integrate address bar
     background: var(--darkGreen);
     background-size: cover;
     -webkit-background-size: cover;

@@ -31,6 +31,8 @@ export const Head = () => {
     <>
       <meta http-equiv="content-language" content="en-us" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />

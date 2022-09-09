@@ -5,8 +5,8 @@ module.exports = {
     title: ` <Grant Wecker/>`,
     siteUrl: `https://grantwecker.com`,
     description: `Grant Wecker is a software developer currently focusing on web applications.`,
-    image: '/preview.png',
-    icon: '/retro_icon.png'
+    image: 'src/images/preview.png',
+    icon: 'src/images/retro_icon.png'
   },
   
   trailingSlash: `never`,
@@ -27,7 +27,7 @@ module.exports = {
         background_color: config.colors.darkGreen,
         theme_color: config.colors.white,
         display: 'minimal-ui',
-        icon: 'static/retro_icon.png',
+        icon: 'src/images/retro_icon.png',
       }
     },
     {
