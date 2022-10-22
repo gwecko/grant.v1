@@ -44,6 +44,7 @@ const GlobalStyle = createGlobalStyle`
       min-width: 100%;
       scroll-behavior: smooth;
       box-sizing: border-box;
+      background: var(--darkGreen);
   }
 
   body{
