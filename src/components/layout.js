@@ -1,8 +1,7 @@
-import * as React from 'react';
-import Navbar from './navbar';
-import { createGlobalStyle } from 'styled-components';
-import SideLinks from './sideLinks';
-
+import * as React from "react";
+import Navbar from "./navbar";
+import { createGlobalStyle } from "styled-components";
+import SideLinks from "./sideLinks";
 
 const GlobalStyle = createGlobalStyle`
   :root{
@@ -44,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
       min-width: 100%;
       scroll-behavior: smooth;
       box-sizing: border-box;
-      background: var(--darkGreen);
+      background-color: var(--darkGreen);
   }
 
   body{
@@ -54,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    background: var(--darkGreen);
+    background-color: inherit;
     background-size: cover;
     -webkit-background-size: cover;
     @media (max-width: @iphone-screen) {
@@ -65,7 +64,8 @@ const GlobalStyle = createGlobalStyle`
   main{
       padding: 100px 20%;
       overflow-x: hidden;
-      background: linear-gradient(0deg, rgba(23,43,10,1) 0%, rgba(72,86,50,1) 40%, rgba(23,43,10,1) 100%);
+      background: var(--darkGreen);
+      background-image: linear-gradient(0deg, rgba(23,43,10,1) 0%, rgba(72,86,50,1) 40%, rgba(23,43,10,1) 100%);
       @media screen and (max-width: 480px) {
         padding: 5%;
       }
@@ -119,21 +119,17 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
 const Layout = ({ children }) => {
-  
   return (
     <>
-      <div id='root'>
+      <div id="root">
         <GlobalStyle />
         <Navbar />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
         <SideLinks />
       </div>
     </>
   );
-}
+};
 
 export default Layout;

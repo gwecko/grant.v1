@@ -26,10 +26,10 @@ export const Head = () => {
   return (
     <>
       <meta http-equiv="content-language" content="en-us" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       
-      <meta name="apple-mobile-web-app-capable" content="yes"></meta>
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
       <title>{title}</title>
       <meta name="description" content={description} />
