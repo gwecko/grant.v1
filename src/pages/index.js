@@ -6,15 +6,13 @@ import ProjectsSection from "../components/sections/projects";
 import ContactSection from "../components/sections/contact";
 import { siteMetadata } from "../../gatsby-config";
 
-
-
 const IndexPage = () => {
   return (
     <>
       <Layout>
         <GreetingSection />
-        <ProjectsSection />
         <AboutSection />
+        <ProjectsSection />
         <ContactSection />
       </Layout>
     </>
@@ -22,17 +20,17 @@ const IndexPage = () => {
 };
 export default IndexPage;
 
-
 // Gatsby Head API -- must be defined in page, not a component
 export const Head = () => {
-
   const { title, description, image, siteUrl, icon } = siteMetadata;
   return (
     <>
       <meta http-equiv="content-language" content="en-us" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /> 
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
       
+      <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
@@ -44,5 +42,5 @@ export const Head = () => {
       <meta property="og:url" content={siteUrl} />
       <meta property="og:type" content="website" />
     </>
-  )
-}
+  );
+};

@@ -98,7 +98,7 @@ const AboutSection = () => {
   const questionsAndAnswers = [
     {
       question: "Who is Grant?",
-      answer: "Software developer capable of rising to the occasion.",
+      answer: "Software developer looking to provide value to you.",
       answer_ext: (
         <div>
           <p>
@@ -156,7 +156,7 @@ const AboutSection = () => {
       hidden: true,
     },
     {
-      question: "What technologies does he use to create?",
+      question: "What technologies does he use?",
       answer:
         "Anything that expands his sphere of knowledge, or anything that the task requires.",
       answer_ext: (
@@ -277,21 +277,21 @@ const AboutSection = () => {
     setqaList(newqaList);
   }
 
-  function handleMouseEnter(key) {
-    qaList[key].hidden = true;
-    handleClick(key);
-  }
+  // function handleMouseEnter(key) {
+  //   qaList[key].hidden = true;
+  //   handleClick(key);
+  // }
 
   // dynamic question & answer list
   const displayedQAList = qaList.map((qAndA, i) => {
     return (
       <div>
-        {/* the question; clicked to show collapsable answer */}
+        {/* the question div; clicked to show collapsable answer */}
         <button
           key={i}
           onClick={() => handleClick(i)}
           onKeyDown={() => handleClick(i)}
-          onMouseEnter={() => handleMouseEnter(i)}
+          // onMouseEnter={() => handleMouseEnter(i)}
         >
           <h3>
             <span className={qaList[i].hidden ? "" : "rotate"}>&gt; </span>
@@ -299,7 +299,7 @@ const AboutSection = () => {
           </h3>
         </button>
 
-        {/* ~~collapses~~ */}
+        {/* the answer div to the question div above  */}
         <div
           key={i}
           className={qaList[i].hidden ? "hide-answer" : "show-answer"}

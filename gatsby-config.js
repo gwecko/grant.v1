@@ -4,9 +4,9 @@ module.exports = {
   siteMetadata: {
     title: ` <Grant Wecker/>`,
     siteUrl: `https://grantwecker.com`,
-    description: `Grant Wecker is a software developer currently focusing on web applications.`,
+    description: `Grant Wecker is a software developer and built this site from scratch.`,
     image: '/preview.png',
-    icon: '/retro_icon.png'
+    icon: '/icon.png'
   },
   
   trailingSlash: `never`,
@@ -27,7 +27,7 @@ module.exports = {
         background_color: config.colors.darkGreen,
         theme_color: config.colors.white,
         display: 'minimal-ui',
-        icon: 'src/images/retro_icon.png',
+        icon: 'src/images/icon.png',
       }
     },
     {
