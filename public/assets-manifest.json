@@ -12,7 +12,8 @@
   "component---src-pages-index-js-3af41db40ee135c2aba2.js.map": "component---src-pages-index-js-3af41db40ee135c2aba2.js.map",
   "component---src-pages-index-js-58858f44b9fb536e80e1.js.map": "component---src-pages-index-js-58858f44b9fb536e80e1.js.map",
   "component---src-pages-index-js-68d65fa89bcc005037ab.js.map": "component---src-pages-index-js-68d65fa89bcc005037ab.js.map",
-  "component---src-pages-index-js.js": "component---src-pages-index-js-58858f44b9fb536e80e1.js",
+  "component---src-pages-index-js-a51fbe13172654dcaa9e.js.map": "component---src-pages-index-js-a51fbe13172654dcaa9e.js.map",
+  "component---src-pages-index-js.js": "component---src-pages-index-js-a51fbe13172654dcaa9e.js",
   "framework-32d4c700d760f2a98dae.js.LICENSE.txt": "framework-32d4c700d760f2a98dae.js.LICENSE.txt",
   "framework-32d4c700d760f2a98dae.js.map": "framework-32d4c700d760f2a98dae.js.map",
   "framework.js": "framework-32d4c700d760f2a98dae.js",
@@ -21,5 +22,6 @@
   "webpack-runtime-11294e8a0c83bff43853.js.map": "webpack-runtime-11294e8a0c83bff43853.js.map",
   "webpack-runtime-1dc3c99a2efc6bb91786.js.map": "webpack-runtime-1dc3c99a2efc6bb91786.js.map",
   "webpack-runtime-4fa49dacf11644626c27.js.map": "webpack-runtime-4fa49dacf11644626c27.js.map",
-  "webpack-runtime.js": "webpack-runtime-1dc3c99a2efc6bb91786.js"
+  "webpack-runtime-82d9e40bea1c6ef1e14c.js.map": "webpack-runtime-82d9e40bea1c6ef1e14c.js.map",
+  "webpack-runtime.js": "webpack-runtime-82d9e40bea1c6ef1e14c.js"
 }
