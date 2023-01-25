@@ -7,6 +7,7 @@ import ContactSection from "../components/sections/contact";
 import { siteMetadata } from "../../gatsby-config";
 
 const IndexPage = () => {
+  return(
     <>
       <Layout>
         <GreetingSection />
@@ -15,11 +16,12 @@ const IndexPage = () => {
         <ContactSection />
       </Layout>
     </>
+  )
 };
 export default IndexPage;
 
 // Gatsby Head API -- must be defined in page, not a component
-export const Head = () => {
+export const Head = ({children}) => {
   const { title, description, image, siteUrl, icon } = siteMetadata;
   return (
     <>
@@ -39,6 +41,7 @@ export const Head = () => {
       <meta property="og:image" content={image} />
       <meta property="og:url" content={siteUrl} />
       <meta property="og:type" content="website" />
+      {children}
     </>
   );
 };
