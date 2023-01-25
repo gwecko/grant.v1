@@ -38,8 +38,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html{
-      min-height: -webkit-fill-available;
-      height: 100%;
+      min-height: 100;
       min-width: 100%;
       scroll-behavior: smooth;
       box-sizing: border-box;
