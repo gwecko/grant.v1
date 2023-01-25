@@ -38,8 +38,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html{
-      min-height: 100;
-      min-width: 100%;
+      min-height: 100vh;
+      // min-width: 100%;
       scroll-behavior: smooth;
       box-sizing: border-box;
       background-color: var(--darkGreen);
