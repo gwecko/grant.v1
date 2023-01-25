@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import Layout from "../components/layout";
 import GreetingSection from "../components/sections/greeting";
 import AboutSection from "../components/sections/about";
@@ -7,7 +7,6 @@ import ContactSection from "../components/sections/contact";
 import { siteMetadata } from "../../gatsby-config";
 
 const IndexPage = () => {
-  return (
     <>
       <Layout>
         <GreetingSection />
@@ -16,7 +15,6 @@ const IndexPage = () => {
         <ContactSection />
       </Layout>
     </>
-  );
 };
 export default IndexPage;
 
@@ -26,8 +24,8 @@ export const Head = () => {
   return (
     <>
       <meta http-equiv="content-language" content="en-us" />
-      <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-sca" />
-      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 

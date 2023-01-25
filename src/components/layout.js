@@ -37,22 +37,23 @@ const GlobalStyle = createGlobalStyle`
     outline: 0;
   }
 
-  html{
+    html{
       min-height: -webkit-fill-available;
+      height: 100%;
       min-width: 100%;
       scroll-behavior: smooth;
       box-sizing: border-box;
-      // background-color: var(--darkGreen);
-  }
+    }
 
   body{
     margin-top: 0px;
     width: 100%;
-    // height: 100%;
+    height: 100%;
     color: var(--white);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    background-color: var(--darkGreen);
+    // iPhone notch space needs a solid color to integrate address bar
+    background: var(--darkGreen);
     background-size: cover;
     -webkit-background-size: cover;
     @media (max-width: @iphone-screen) {
@@ -63,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
   main{
       padding: 100px 20%;
       overflow-x: hidden;
-      background-image: linear-gradient(0deg, rgba(23,43,10,1) 0%, rgba(72,86,50,1) 40%, rgba(23,43,10,1) 100%);
+      background: linear-gradient(0deg, rgba(23,43,10,1) 0%, rgba(72,86,50,1) 40%, rgba(23,43,10,1) 100%);
       @media screen and (max-width: 480px) {
         padding: 5%;
       }
